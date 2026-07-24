@@ -1,3 +1,5 @@
+![AI copywriter. Human tone. Explains extreme concepts easily. enso](assets/banner.png)
+
 # AI Copywriter
 
 by [Mickey Haslavsky](https://github.com/mikiarlo3)
@@ -68,6 +70,18 @@ Any agent harness can use the skill directly because the runtime artifact is `SK
 ```bash
 git clone https://github.com/mikiarlo3/ai-copywriter.git /path/to/your/skills/ai-copywriter
 ```
+
+## Using it with ChatGPT, Manus, and other AI tools
+
+The whole skill is one Markdown file with no code or dependencies, so any LLM that accepts text can run it. The pattern is always the same: get the contents of [`SKILL.md`](SKILL.md) in front of the model, tell it to follow them, then make your requests.
+
+**Claude (claude.ai and the Claude apps).** Claude Code users should use the plugin or skills CLI install above. On claude.ai, create a Project, upload `SKILL.md` to its knowledge, and put one line in the project instructions: "Follow SKILL.md for all copywriting and humanizing requests." For a single conversation, attach the file to your first message with that same line.
+
+**ChatGPT.** Create a custom GPT and paste the full contents of `SKILL.md` into its Instructions field; every chat with that GPT now runs the skill. For a one-off conversation, paste the contents as your first message and add: "Follow these instructions for the rest of this conversation."
+
+**Manus.** Attach `SKILL.md` to your task, or add it to your knowledge so it applies to every task, and tell it: "Use this file as your copywriting and editing guide."
+
+**Any other LLM.** Put `SKILL.md` in the system prompt if you control it, or in the first message if you don't. The file is small enough (about 8,000 tokens) to fit comfortably in any modern model's context.
 
 ## Usage
 
