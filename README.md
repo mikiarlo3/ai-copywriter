@@ -105,6 +105,11 @@ Meta description for this landing page, 155 characters:
 [paste page copy]
 ```
 
+```
+Write a LinkedIn post from this: [what happened, in your own words,
+with the real numbers and the real moment]
+```
+
 ### Humanizing text
 
 Paste text and it comes back with the AI tells removed:
@@ -148,6 +153,8 @@ Each format is the two questions applied to a different moment in the reader's d
 **Microcopy.** The reader is inside your product, mid-task. Buttons name the result ("Send invoice," never "Submit"). Errors reach someone whose task just broke, so they say what went wrong and how to fix it, in that order, without blame. Empty states reach someone new and unsure, so they sell the one next action. Destructive confirmations state the consequence.
 
 **Subject lines and hooks.** The reader is clearing an inbox, deleting on reflex. So: written to one person, payoff in the first 30 to 40 characters, no fake urgency and no fake familiarity.
+
+**LinkedIn posts.** The reader is scrolling between meetings, hoping for something that feels like work but reads like gossip. So: the first two lines (all that shows before "...see more") open mid-story with the most concrete detail available, one true story or stance per post, and an ending that recruits real comments instead of begging "Thoughts?". LinkedIn's short-paragraph rhythm is honored as the format's convention, but the story must be yours and true: the skill asks for the real moment and the real numbers, and it will not invent a firing, a candidate, or a "DM I got this morning." You get 3 to 5 hook options plus one full post built on the best one.
 
 ## The humanizer engine
 
@@ -249,6 +256,7 @@ The second version sells harder than the first. It just doesn't sound like a pre
 
 ## Version history
 
+- **1.3.0** - Added LinkedIn posts to the copywriting mode: hook-first structure (the two lines before "...see more" carry the post), one true story or stance per post, endings that recruit real comments, and delivery as 3 to 5 hook options plus a full post. LinkedIn's short-paragraph rhythm is allowed as a scoped format exception to pattern 31, and the no-fabrication rule is explicit: stories, dialogue, and numbers must come from the author. Raised the SKILL.md portability budget from 500 to 550 lines to fit the section. No change to the 33 patterns.
 - **1.2.0** - Added "Copy that recruits its next reader" to the copywriting mode: repeatable lines over clever ones, share-worthy specifics that give the reader social cover, every product surface treated as an acquisition surface, invite loops written into the copy where the product allows it, and a rule that share-me moments must be true. No change to the 33 patterns.
 - **1.1.1** - Attributed the reader-first copywriting method to [enso.bot/research](https://enso.bot/research) in the README and the skill's reference section. No change to behavior or the 33 patterns.
 - **1.1.0** - Made reader-first thinking the foundation of the copywriting mode: two mandatory pre-writing questions (name the feeling of the person on the other end at the moment the line reaches them; find the simplest kitchen-table way to explain the concept), a per-format map of reader feelings (headline, description, error, empty state, subject line), pick rationales justified by the reader's feeling instead of craft, and copy-specific audit questions (does the line meet the feeling; can the reader repeat the promise after one read; does it survive alone on a billboard). Examples updated to show the reasoning. No change to the 33 patterns.

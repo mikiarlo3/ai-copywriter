@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "ai-copywriter",
-  "description": "Reader-first copywriting that converts without sounding like a robot: clickbait titles, short descriptions, microcopy, and subject lines, always starting from the feeling of the person on the other end and the simplest way to explain the concept. Backed by the humanizer's 33 AI-writing patterns from Wikipedia's \"Signs of AI writing\" guide.",
-  "version": "1.2.0",
+  "description": "Reader-first copywriting that converts without sounding like a robot: clickbait titles, short descriptions, microcopy, subject lines, and viral LinkedIn posts, always starting from the feeling of the person on the other end and the simplest way to explain the concept. Backed by the humanizer's 33 AI-writing patterns from Wikipedia's \"Signs of AI writing\" guide.",
+  "version": "1.3.0",
   "author": {
     "name": "Mickey Haslavsky",
     "url": "https://github.com/mikiarlo3"
@@ -10,5 +10,5 @@
   "homepage": "https://github.com/mikiarlo3/ai-copywriter",
   "repository": "https://github.com/mikiarlo3/ai-copywriter",
   "license": "MIT",
-  "keywords": ["copywriting", "marketing", "headlines", "microcopy", "writing", "editing", "ai-detection", "humanize", "prose", "style"]
+  "keywords": ["copywriting", "marketing", "headlines", "microcopy", "linkedin", "social-media", "writing", "editing", "ai-detection", "humanize", "prose", "style"]
 }

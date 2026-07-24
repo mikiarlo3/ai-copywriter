@@ -3,7 +3,8 @@ name: ai-copywriter
 description: |
   Write copy that converts and doesn't sound like a robot. Two jobs in one skill:
   (1) a copywriter for clickbait titles, headlines, short descriptions, microcopy,
-  CTAs, error messages, and subject lines, working reader-first: name the feeling
+  CTAs, error messages, subject lines, and viral LinkedIn posts, working
+  reader-first: name the feeling
   of the person on the other end, then find the simplest possible way to explain
   the concept; (2) a humanizer that removes signs of AI-generated writing, built
   on Wikipedia's comprehensive "Signs of AI writing" guide. Use when writing or
@@ -14,7 +15,7 @@ description: |
   parallelisms, and filler phrases.
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # AI Copywriter: Write Copy That Converts, Humanize Everything
@@ -77,6 +78,7 @@ Each format catches the reader in a different moment. Name it before you write:
 - An **error message** reaches someone whose task just broke. Frustrated, maybe blaming themselves. They want the fix, not an apology and definitely not a mystery.
 - An **empty state** reaches someone brand new, unsure what this screen is for, quietly worried they're doing it wrong. They want to be told the one next step.
 - A **subject line** reaches someone clearing an inbox, deleting on reflex. They want permission to delete you; don't give it to them.
+- A **LinkedIn post** reaches someone scrolling between meetings, half guilty about it, hoping for something that feels like work but reads like gossip. They want a story they can repeat in a standup or a stance they can argue with.
 
 ### Clickbait titles and headlines
 
@@ -113,6 +115,18 @@ Buttons, empty states, error messages, tooltips, form labels, confirmations. Her
 - Write to one person, not a segment. A subject line that reads like a colleague's email gets opened; one that reads like a campaign gets archived.
 - Front-load the concrete word: the mobile preview shows 30 to 40 characters, so the payoff can't sit at the end.
 - Lowercase-casual ("your invoice from tuesday") and plain-direct ("March report is ready") both work. Fake urgency ("LAST CHANCE!!") and fake familiarity ("quick question") burn trust for one open.
+
+### LinkedIn posts
+
+A viral LinkedIn post is a true story with a hook, told in the format the feed rewards. The format bends for LinkedIn; the honesty rules never do.
+
+- The first two lines are the whole game: that's all anyone sees before "...see more." Open mid-story or mid-argument with the most concrete detail you have. "I watched our best engineer quit over a $40 gift card" earns the click; "I want to share some thoughts on retention" is dead on arrival.
+- Short paragraphs of one or two lines with real white space are this format's convention, the way a 155-character budget is a meta description's. This is a scoped exception to §31: LinkedIn's rhythm is allowed here and nowhere else, and even here every line must carry information, not manufactured drama.
+- One story or one stance per post. A specific moment (what happened, what it cost, what changed) beats an advice list every time.
+- The story must be the user's, and true. Ask for the real moment, the real numbers, the real dialogue. Never invent a conversation, a firing, a candidate, or a "DM I got this morning." Fabricated vulnerability is both a lie and, increasingly, a recognized AI tell.
+- End by recruiting the comments, because comments are the distribution engine: a genuine question you actually want answers to, or a stance stated cleanly enough that people will line up to disagree. Never "Agree?", "Thoughts?", or a call to repost.
+- Zero to three hashtags, at the bottom, if any. No "I'm humbled to announce," no engagement-pod bait, no tagging strangers.
+- Deliver 3 to 5 hook options plus one full post built on the best hook, with the pick justified by the reader's feeling.
 
 ### Copy that recruits its next reader
 
