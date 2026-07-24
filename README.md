@@ -6,9 +6,19 @@ A portable agent skill that does the two halves of the copy job most tools split
 
 It is built on [blader's Humanizer](https://github.com/blader/humanizer), which packaged Wikipedia's "Signs of AI writing" guide into 33 detectable, fixable patterns. Those 33 patterns are all still here, unchanged. What this skill adds is the other direction: not just cleaning up prose after the fact, but writing headlines, product blurbs, and button labels that convert without tripping a single one of those patterns.
 
+## How it thinks
+
+A really good copywriter is not thinking about the product. They are thinking about the person on the other end. So before this skill writes a single word, it answers two questions:
+
+**What is that person feeling at the exact moment the line reaches them?** Not the demographic, the person in the moment. A headline reaches someone mid-scroll, half a second from gone. An error message reaches someone whose task just broke and who might be blaming themselves. An empty state reaches someone new who is quietly worried they're doing it wrong. A subject line reaches someone deleting on reflex. The feeling decides the tone, the length, and what comes first: a frustrated person needs the fix in the first three words; a skeptical person needs proof before adjectives. If the skill doesn't know the feeling, it asks you who the reader is and what just happened to them.
+
+**What is the simplest way to explain this?** If the product can't be described in the words you'd use across a kitchen table, it isn't understood well enough to sell yet, and the skill will keep asking what it actually does until it can. Simple means short, common words, one thought per sentence, and nothing the reader has to look up or reread. The reader never does any work. The writer does all of it.
+
+Every variant it produces is an answer to those two questions, and when it recommends one, the reason is the reader's feeling, never "this one is punchier."
+
 ## Why both jobs in one skill
 
-Ask a model for a headline and you get "Unlock the Ultimate Guide to Revolutionize Your Workflow." Ask it to tone that down and you get something so flat nobody clicks it. The two failure modes come from the same place: the model doesn't know that good copy and AI slop are opposites.
+Ask a model for a headline and you get "Unlock the Ultimate Guide to Revolutionize Your Workflow." Ask it to tone that down and you get something so flat nobody clicks it. The two failure modes come from the same place: the model is thinking about the product and its adjectives, not about the reader and their half-second of attention.
 
 Copy that works is specific. "We cut our AWS bill by $40,000 in one afternoon" gets the click because the promise is concrete and checkable. "Game-changing cloud savings" gets scrolled past because the reader's filter deleted it before it registered. The humanizer rules aren't a constraint on the copywriting; they're most of what makes it good.
 
@@ -113,13 +123,15 @@ The skill analyzes your sentence rhythm, word choices, and quirks, then applies 
 
 ## What the copywriting mode covers
 
-**Clickbait titles and headlines.** Specific promises, honest curiosity gaps, the reader's vocabulary instead of the industry's. Banned on sight: ultimate, game-changer, unlock, elevate, revolutionize, "you won't believe." You get variants across angles (number, question, contradiction, outcome, named enemy, how-to), not one take.
+Each format is the two questions applied to a different moment in the reader's day:
 
-**Short descriptions.** App store blurbs, meta descriptions, one-liners. The first five words carry the benefit, one idea per description, and character budgets are respected by cutting ideas, not by compressing sentences into fragments.
+**Clickbait titles and headlines.** The reader is mid-scroll, bored, owes you nothing. So: specific promises, honest curiosity gaps, the reader's vocabulary instead of the industry's. Banned on sight: ultimate, game-changer, unlock, elevate, revolutionize, "you won't believe." You get variants across angles (number, question, contradiction, outcome, named enemy, how-to), not one take.
 
-**Microcopy.** Buttons name the result ("Send invoice," never "Submit"). Errors say what went wrong and how to fix it, without blaming the user. Empty states sell the first action. Destructive confirmations state the consequence.
+**Short descriptions.** The reader is comparing you to three open tabs, hopeful but burned before. So: the first five words carry the benefit, one idea per description, and character budgets are respected by cutting ideas, not by compressing sentences into fragments.
 
-**Subject lines and hooks.** Written to one person, payoff in the first 30 to 40 characters, no fake urgency and no fake familiarity.
+**Microcopy.** The reader is inside your product, mid-task. Buttons name the result ("Send invoice," never "Submit"). Errors reach someone whose task just broke, so they say what went wrong and how to fix it, in that order, without blame. Empty states reach someone new and unsure, so they sell the one next action. Destructive confirmations state the consequence.
+
+**Subject lines and hooks.** The reader is clearing an inbox, deleting on reflex. So: written to one person, payoff in the first 30 to 40 characters, no fake urgency and no fake familiarity.
 
 ## The humanizer engine
 
@@ -197,18 +209,20 @@ Say you hand it a note-taking app for lawyers and ask for launch copy.
 
 **What this skill produces:**
 
+> Reader: a lawyer at 7pm who just spent twenty minutes hunting through legal pads for one line from a deposition. Feeling: that specific frustration, plus fatigue from every app that promised to fix it. Simplest explanation of the product: you type notes, and later you can find any line by searching.
+>
 > Headline options:
 > 1. "Your case notes, searchable before you're back at your desk"
 > 2. "Stop losing billable hours to notes you can't find"
 > 3. "The note app that knows what a deposition is"
 >
-> Pick: #2. It names the cost in the reader's own units (billable hours), and the pain is one every lawyer has had this month.
+> Pick: #2. She's not dreaming about better software, she's mad about tonight's wasted twenty minutes, and #2 names that exact frustration in her own units (billable hours).
 >
 > Meta description (148 chars): "CaseNotes turns your hearing and deposition notes into a searchable case file. Find any quote, date, or exhibit in seconds, from any device."
 >
-> Empty state: "Add your first case to start taking notes."
+> Empty state: "Add your first case to start taking notes." (A new user doesn't need selling here; they need to know the one next step.)
 
-The second version sells harder than the first. It just doesn't sound like a press release fed through a blender.
+The second version sells harder than the first. It just doesn't sound like a press release fed through a blender, and every choice traces back to how the reader feels in that moment.
 
 ## References
 
@@ -218,6 +232,7 @@ The second version sells harder than the first. It just doesn't sound like a pre
 
 ## Version history
 
+- **1.1.0** - Made reader-first thinking the foundation of the copywriting mode: two mandatory pre-writing questions (name the feeling of the person on the other end at the moment the line reaches them; find the simplest kitchen-table way to explain the concept), a per-format map of reader feelings (headline, description, error, empty state, subject line), pick rationales justified by the reader's feeling instead of craft, and copy-specific audit questions (does the line meet the feeling; can the reader repeat the promise after one read; does it survive alone on a billboard). Examples updated to show the reasoning. No change to the 33 patterns.
 - **1.0.0** - First release of AI Copywriter. Forked from blader/humanizer v2.9.1 (all 33 patterns retained unchanged) and added COPYWRITING MODE: clickbait titles and headlines, short descriptions, microcopy, and subject lines, plus a copy-request invocation mode that delivers variants with a pick, a no-fabrication rule for product facts, and a billboard-test audit question for copy.
 
 ## License

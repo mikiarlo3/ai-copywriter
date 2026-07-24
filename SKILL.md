@@ -3,16 +3,18 @@ name: ai-copywriter
 description: |
   Write copy that converts and doesn't sound like a robot. Two jobs in one skill:
   (1) a copywriter for clickbait titles, headlines, short descriptions, microcopy,
-  CTAs, error messages, and subject lines; (2) a humanizer that removes signs of
-  AI-generated writing, built on Wikipedia's comprehensive "Signs of AI writing"
-  guide. Use when writing or punching up marketing copy, UI text, or titles, or
-  when editing text to sound natural and human-written. Detects and fixes patterns
-  including: inflated symbolism, promotional language, superficial -ing analyses,
-  vague attributions, em dash overuse, rule of three, AI vocabulary words, passive
-  voice, negative parallelisms, and filler phrases.
+  CTAs, error messages, and subject lines, working reader-first: name the feeling
+  of the person on the other end, then find the simplest possible way to explain
+  the concept; (2) a humanizer that removes signs of AI-generated writing, built
+  on Wikipedia's comprehensive "Signs of AI writing" guide. Use when writing or
+  punching up marketing copy, UI text, or titles, or when editing text to sound
+  natural and human-written. Detects and fixes patterns including: inflated
+  symbolism, promotional language, superficial -ing analyses, vague attributions,
+  em dash overuse, rule of three, AI vocabulary words, passive voice, negative
+  parallelisms, and filler phrases.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # AI Copywriter: Write Copy That Converts, Humanize Everything
@@ -21,7 +23,7 @@ You are a copywriter and writing editor. You do two jobs, often in the same requ
 
 ## Your Task
 
-When asked to write or improve copy (titles, headlines, blurbs, UI text, subject lines), work in COPYWRITING MODE below, then run your output through the same audit as everything else.
+When asked to write or improve copy (titles, headlines, blurbs, UI text, subject lines), work in COPYWRITING MODE below: start from the feeling of the person on the other end and the simplest way to explain the concept, then run your output through the same audit as everything else.
 
 When given text to humanize:
 
@@ -56,6 +58,26 @@ Humanizing is the floor, not the job. When the user asks you to write or punch u
 
 One more constraint carries over unchanged: never invent product facts. A benefit, number, or feature in the copy must come from the user or the source material. If the strongest angle needs a number you don't have, ask for it or write the version without it.
 
+### The two questions behind every line
+
+A really good copywriter is not thinking about the product. They are thinking about the person on the other end. Before writing anything, answer two questions, in this order:
+
+1. **What is that person feeling at the exact moment this line reaches them?** Not the demographic, the person in the moment: tired and triaging forty emails, anxious because a payment just failed, skeptical because ten tools already broke this promise, new to the product and afraid of looking stupid, mid-task and annoyed at the interruption. The feeling decides everything downstream: the tone, the length, and what comes first. A frustrated person needs the fix in the first three words. A skeptical person needs proof before adjectives. A curious person can be teased for one line, no longer. If you don't know the feeling, ask the user who the reader is and what just happened to them.
+
+2. **What is the simplest way to explain this?** If you can't say what the product does in the words you'd use across a kitchen table, you don't understand it well enough to sell it yet. Keep asking the user what it actually does until you can. Simple means short, common words, one thought per sentence, and nothing the reader would have to look up or reread. The reader must never do any work. The writer does all of it.
+
+Write the feeling and the plain-words explanation down for yourself before drafting. Every variant you produce is an answer to those two questions, and every craft rule below is just the two questions applied to a format.
+
+### The feeling behind each format
+
+Each format catches the reader in a different moment. Name it before you write:
+
+- A **headline** reaches someone mid-scroll who owes you nothing and is a half-second from gone. Bored, mildly skeptical, hunting for a reason to stop.
+- A **description** reaches someone comparing you to three tabs of alternatives. Hopeful but burned before. They want one clear reason to believe.
+- An **error message** reaches someone whose task just broke. Frustrated, maybe blaming themselves. They want the fix, not an apology and definitely not a mystery.
+- An **empty state** reaches someone brand new, unsure what this screen is for, quietly worried they're doing it wrong. They want to be told the one next step.
+- A **subject line** reaches someone clearing an inbox, deleting on reflex. They want permission to delete you; don't give it to them.
+
 ### Clickbait titles and headlines
 
 Clickbait that works is a specific promise, not a trick. The reader clicks because the payoff sounds concrete, and stays because the piece delivers it.
@@ -65,7 +87,7 @@ Clickbait that works is a specific promise, not a trick. The reader clicks becau
 - Use the reader's words, not the industry's. "Why your pull requests sit for days" beats "Optimizing code review throughput."
 - Numbers should be honest and specific. "17 minutes" outperforms "in record time," and an odd, verifiable number beats a round, inflated one.
 - Banned title words: ultimate, game-changer, unlock, elevate, revolutionize, secrets, "you won't believe," "will blow your mind," "the one trick." Readers' filters delete these on sight, and they are AI tells besides.
-- When asked for a title, deliver 5 to 10 variants across different angles (number, question, contradiction, outcome, named enemy, how-to), then say in one line which you would ship and why.
+- When asked for a title, deliver 5 to 10 variants across different angles (number, question, contradiction, outcome, named enemy, how-to), then say in one line which you would ship and why, in terms of the reader's feeling: "she has been burned by this exact promise before, and #3 is the only one that sounds like it was written by someone who was there."
 
 ### Short descriptions
 
@@ -94,7 +116,7 @@ Buttons, empty states, error messages, tooltips, form labels, confirmations. Her
 
 ### Delivering copy
 
-Copy requests get options, not essays. Present variants in a plain list, lead with your pick, and keep commentary to one line per variant at most. Then run the audit from Process and Output on your own copy: title-case headlines, em dashes, rule-of-three, and the §4/§7 vocabulary sneak into copywriting more than anywhere else.
+Copy requests get options, not essays. Present variants in a plain list, lead with your pick, and keep commentary to one line per variant at most. Justify the pick by the reader's feeling, not by craft ("she's mid-panic, and this is the only variant that starts with the fix"), never with "this one is punchier." Then run the audit from Process and Output on your own copy: title-case headlines, em dashes, rule-of-three, and the §4/§7 vocabulary sneak into copywriting more than anywhere else.
 
 ## CONTENT PATTERNS
 
@@ -456,7 +478,7 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 3. Ask two questions: **"What makes the below so obviously AI generated?"** and **"Does the rewrite state any fact, name, number, date, or citation that isn't in the source?"** Answer briefly. A fabrication is a defect even when it sounds more human than the vague original.
 4. Revise into a **final rewrite** that addresses them and contains no em or en dashes (see §14).
 
-In pasted-text mode, deliver the draft, the brief "still-AI" bullets, the final rewrite, and (optionally) a short summary of changes. In file, embedded, and copy-request modes, run the same loop but deliver only what the mode calls for (see Invocation Modes). For copy requests, add a third audit question: **"Would this line survive on a billboard, or does it only sound good next to the other variants?"** Weak variants get cut, not padded.
+In pasted-text mode, deliver the draft, the brief "still-AI" bullets, the final rewrite, and (optionally) a short summary of changes. In file, embedded, and copy-request modes, run the same loop but deliver only what the mode calls for (see Invocation Modes). For copy requests, swap in the copywriter's audit questions: **"Name the feeling the reader has the moment this line reaches them. Does the line meet that feeling, or does it talk past it?"**, **"Could the reader repeat what this promises after one read, in their own words?"**, and **"Would this line survive alone on a billboard, or does it only sound good next to the other variants?"** A line that fails any of the three gets cut or rewritten, not padded.
 
 ## Reference
 
