@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "ai-copywriter",
+  "owner": {
+    "name": "Mickey Haslavsky",
+    "url": "https://github.com/mikiarlo3"
+  },
+  "description": "The AI Copywriter skill, installable as a Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "ai-copywriter",
+      "source": "./",
+      "description": "Write copy that converts without sounding like a robot: clickbait titles, short descriptions, microcopy, and subject lines, backed by the humanizer's 33 AI-writing patterns from Wikipedia's \"Signs of AI writing\" guide.",
+      "license": "MIT",
+      "keywords": ["copywriting", "marketing", "headlines", "microcopy", "writing", "editing", "ai-detection", "humanize", "prose", "style"]
+    }
+  ]
+}

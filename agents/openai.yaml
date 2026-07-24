@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Copywriter"
+  short_description: "Write converting copy and remove AI writing patterns"
+  default_prompt: "Use $ai-copywriter to write this copy (or humanize this text) so it converts and sounds like a person wrote it."

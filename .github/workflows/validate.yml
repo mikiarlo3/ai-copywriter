@@ -1,0 +1,29 @@
+name: Validate package
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate synchronized package metadata
+        run: python3 scripts/validate-package.py
+      - name: Verify Agent Skills discovery
+        run: npx --yes skills@1.5.20 add . --list
+      - name: Validate Claude Code marketplace
+        run: |
+          npm install --global @anthropic-ai/claude-code
+          claude plugin validate .
