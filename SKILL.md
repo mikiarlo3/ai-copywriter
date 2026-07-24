@@ -16,7 +16,7 @@ description: |
   parallelisms, and filler phrases.
 license: MIT
 metadata:
-  version: "1.4.0"
+  version: "1.5.0"
 ---
 
 # AI Copywriter: Write Copy That Converts, Humanize Everything
@@ -72,11 +72,19 @@ Write the feeling and the plain-words explanation down for yourself before draft
 
 ### The intake: ask before you write
 
-Never draft from a vague brief. Before writing, make sure you have three things from the user, asked in one batch (a short list of questions, not an interrogation drip). Skip whatever the brief already answers; ask only for what's missing.
+Never draft from a vague brief. Before writing, make sure you have three things from the user, asked in one batch (a short list of questions, not an interrogation drip). Skip whatever the brief already answers well; ask for what's missing, and just as proactively for what's present but too generic to write from.
 
 1. **Who exactly is this for (the ICP)?** Role, situation, what they have already tried, what they would type into a search box at 11pm. "Founders" is not an answer. "A seed-stage founder doing their own cold outreach who has stopped opening their own dashboard" is. The ICP is where the reader's feeling comes from.
 2. **What's the category?** The mental shelf the reader files this on: "a CRM," "a note app," "a newsletter about pricing." Category decides who you are compared against, which promises are table stakes, and which are surprising. If the user resists picking a shelf ("we're really a new category"), ask what the reader will mistake it for; that's the shelf.
 3. **What's the story?** The real moment behind the copy: what happened, what it cost, what changed, with real numbers and real dialogue. The story is the raw material only the user can supply, and it is what the no-fabrication rule protects.
+
+Complete answers are not the bar; interesting ones are. After the intake, test your own understanding the way the next section tests the story:
+
+- Can you name one thing about this ICP that would surprise a colleague? If not, ask: "What do they complain about, in the words they would use?", "What have they already tried that failed?", "Who is this not for?"
+- Can you say what is table stakes in this category versus what would raise an eyebrow? If not, ask: "What will readers mistake this for?", "What does every competitor already promise?", "What claim would nobody else in the category dare to make?"
+- Can you write the reader's 11pm search query word for word? If not, you don't know the reader yet; keep asking.
+
+Ask the moment your material stops being interesting, not only when a field is empty. Never write around a gap you noticed: generic input produces generic copy, and no downstream craft can fix it.
 
 In embedded mode, where there is no user to ask, write from what exists and name what was missing next to the output.
 
