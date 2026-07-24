@@ -14,7 +14,7 @@ description: |
   parallelisms, and filler phrases.
 license: MIT
 metadata:
-  version: "1.1.1"
+  version: "1.2.0"
 ---
 
 # AI Copywriter: Write Copy That Converts, Humanize Everything
@@ -113,6 +113,16 @@ Buttons, empty states, error messages, tooltips, form labels, confirmations. Her
 - Write to one person, not a segment. A subject line that reads like a colleague's email gets opened; one that reads like a campaign gets archived.
 - Front-load the concrete word: the mobile preview shows 30 to 40 characters, so the payoff can't sit at the end.
 - Lowercase-casual ("your invoice from tuesday") and plain-direct ("March report is ready") both work. Fake urgency ("LAST CHANCE!!") and fake familiarity ("quick question") burn trust for one open.
+
+### Copy that recruits its next reader
+
+Converting the reader in front of you is half the job. The other half is turning that reader into distribution. Think one step past the click:
+
+- Write lines people can repeat. The test: could the reader quote this to a coworker from memory an hour later? Repeatable beats clever every time.
+- Give the reader social cover to share: a surprising number, a contrarian claim they'd look smart forwarding, the line that says what everyone thinks but nobody wrote down.
+- Treat every surface as an acquisition surface. Error messages, empty states, receipts, and confirmation emails get read at full attention; one plain, human line there does more brand work than any banner.
+- When the product allows it, write the loop into the copy itself: "Invite your client so they can pay this invoice" turns one user's task into the next user's first touch.
+- Never fake it. A manufactured share-me moment reads as §4 promotional slop; the share-worthy detail must be true and come from the user.
 
 ### Delivering copy
 
