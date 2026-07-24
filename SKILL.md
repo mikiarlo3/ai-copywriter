@@ -4,9 +4,10 @@ description: |
   Write copy that converts and doesn't sound like a robot. Two jobs in one skill:
   (1) a copywriter for clickbait titles, headlines, short descriptions, microcopy,
   CTAs, error messages, subject lines, and viral LinkedIn posts, working
-  reader-first: name the feeling
-  of the person on the other end, then find the simplest possible way to explain
-  the concept; (2) a humanizer that removes signs of AI-generated writing, built
+  reader-first: it asks for the ICP, the category, and the story before writing,
+  helps sharpen the story until it is worth telling, names the feeling of the
+  person on the other end, then finds the simplest possible way to explain the
+  concept; (2) a humanizer that removes signs of AI-generated writing, built
   on Wikipedia's comprehensive "Signs of AI writing" guide. Use when writing or
   punching up marketing copy, UI text, or titles, or when editing text to sound
   natural and human-written. Detects and fixes patterns including: inflated
@@ -15,7 +16,7 @@ description: |
   parallelisms, and filler phrases.
 license: MIT
 metadata:
-  version: "1.3.0"
+  version: "1.4.0"
 ---
 
 # AI Copywriter: Write Copy That Converts, Humanize Everything
@@ -63,11 +64,32 @@ One more constraint carries over unchanged: never invent product facts. A benefi
 
 A really good copywriter is not thinking about the product. They are thinking about the person on the other end. This is the reader-first method from enso's communication research (enso.bot/research). Before writing anything, answer two questions, in this order:
 
-1. **What is that person feeling at the exact moment this line reaches them?** Not the demographic, the person in the moment: tired and triaging forty emails, anxious because a payment just failed, skeptical because ten tools already broke this promise, new to the product and afraid of looking stupid, mid-task and annoyed at the interruption. The feeling decides everything downstream: the tone, the length, and what comes first. A frustrated person needs the fix in the first three words. A skeptical person needs proof before adjectives. A curious person can be teased for one line, no longer. If you don't know the feeling, ask the user who the reader is and what just happened to them.
+1. **What is that person feeling at the exact moment this line reaches them?** Not the demographic, the person in the moment: tired and triaging forty emails, anxious because a payment just failed, skeptical because ten tools already broke this promise, new to the product and afraid of looking stupid, mid-task and annoyed at the interruption. The feeling decides everything downstream: the tone, the length, and what comes first. A frustrated person needs the fix in the first three words. A skeptical person needs proof before adjectives. A curious person can be teased for one line, no longer. If you don't know the feeling, the intake below gets you there.
 
 2. **What is the simplest way to explain this?** If you can't say what the product does in the words you'd use across a kitchen table, you don't understand it well enough to sell it yet. Keep asking the user what it actually does until you can. Simple means short, common words, one thought per sentence, and nothing the reader would have to look up or reread. The reader must never do any work. The writer does all of it.
 
-Write the feeling and the plain-words explanation down for yourself before drafting. Every variant you produce is an answer to those two questions, and every craft rule below is just the two questions applied to a format.
+Write the feeling and the plain-words explanation down for yourself before drafting. Every variant you produce is an answer to those two questions, and every craft rule below is just the two questions applied to a format. The intake below is how you get the answers.
+
+### The intake: ask before you write
+
+Never draft from a vague brief. Before writing, make sure you have three things from the user, asked in one batch (a short list of questions, not an interrogation drip). Skip whatever the brief already answers; ask only for what's missing.
+
+1. **Who exactly is this for (the ICP)?** Role, situation, what they have already tried, what they would type into a search box at 11pm. "Founders" is not an answer. "A seed-stage founder doing their own cold outreach who has stopped opening their own dashboard" is. The ICP is where the reader's feeling comes from.
+2. **What's the category?** The mental shelf the reader files this on: "a CRM," "a note app," "a newsletter about pricing." Category decides who you are compared against, which promises are table stakes, and which are surprising. If the user resists picking a shelf ("we're really a new category"), ask what the reader will mistake it for; that's the shelf.
+3. **What's the story?** The real moment behind the copy: what happened, what it cost, what changed, with real numbers and real dialogue. The story is the raw material only the user can supply, and it is what the no-fabrication rule protects.
+
+In embedded mode, where there is no user to ask, write from what exists and name what was missing next to the output.
+
+### Making the story worth telling
+
+Don't accept the first story. Test it before you write:
+
+- Is there a number in it that surprises?
+- Is there a moment where it almost failed?
+- Did the user believe something that turned out wrong?
+- Would they tell this story at dinner without being asked?
+
+If it fails all four, the story isn't ready, and writing anyway produces generic copy no craft can save. Dig instead: "What surprised you most?", "What did it cost before it worked?", "What did you delete, undo, or regret?", "What do customers say about this, verbatim?" Boring-but-true always beats interesting-but-invented, but the reason this loop exists is that there is almost always a true story that is also interesting. Keep digging until it shows up, then write.
 
 ### The feeling behind each format
 
@@ -118,14 +140,17 @@ Buttons, empty states, error messages, tooltips, form labels, confirmations. Her
 
 ### LinkedIn posts
 
-A viral LinkedIn post is a true story with a hook, told in the format the feed rewards. The format bends for LinkedIn; the honesty rules never do.
+A viral LinkedIn post is a true story with a hook, told in the format the feed rewards. The format bends for LinkedIn; the honesty rules never do. These rules follow the sharing research summarized in `references/linkedin-virality.md` (read it when the user wants the evidence or the post keeps underperforming): people share what makes them look informed to their own network, and the feed spreads what a recognizable audience genuinely engages with. There is no secret formula, no golden hour, no guaranteed link penalty; virality is a noisy by-product of being repeatedly useful to one community, so never promise it and never chase it with algorithm folklore.
 
-- The first two lines are the whole game: that's all anyone sees before "...see more." Open mid-story or mid-argument with the most concrete detail you have. "I watched our best engineer quit over a $40 gift card" earns the click; "I want to share some thoughts on retention" is dead on arrival.
+- The first two lines are the whole game: that's all anyone sees before "...see more." Open mid-story or mid-argument with the most concrete detail you have. "I watched our best engineer quit over a $40 gift card" earns the click; "I want to share some thoughts on retention" is dead on arrival. The hook must accurately preview the payoff: dwell time earned by clarity spreads, dwell time earned by withholding reads as bait.
+- Build the post around one portable claim the reader can repeat in their own words tomorrow. Sharing attaches the post to the reader's professional reputation, so the claim has to make the sharer look informed, practical, or generous. "The first job AI removes is not a role, it is the 30-minute handoff nobody owns" travels; "AI is changing work" does not.
+- Write to a recognizable professional audience, which the intake's ICP gives you. "How first-time engineering managers make decision ownership visible" beats "thoughts on leadership": relevance to a specific community outperforms indiscriminate reach, for readers and for the feed's relevance models alike.
+- Energy comes from surprise, stakes, or productive tension: a non-obvious pattern, an overlooked risk, a belief that turned out wrong. Never rage-bait or manufactured conflict. The test before posting: would a reasonable professional be comfortable being publicly associated with this?
 - Short paragraphs of one or two lines with real white space are this format's convention, the way a 155-character budget is a meta description's. This is a scoped exception to §31: LinkedIn's rhythm is allowed here and nowhere else, and even here every line must carry information, not manufactured drama.
 - One story or one stance per post. A specific moment (what happened, what it cost, what changed) beats an advice list every time.
-- The story must be the user's, and true. Ask for the real moment, the real numbers, the real dialogue. Never invent a conversation, a firing, a candidate, or a "DM I got this morning." Fabricated vulnerability is both a lie and, increasingly, a recognized AI tell.
-- End by recruiting the comments, because comments are the distribution engine: a genuine question you actually want answers to, or a stance stated cleanly enough that people will line up to disagree. Never "Agree?", "Thoughts?", or a call to repost.
-- Zero to three hashtags, at the bottom, if any. No "I'm humbled to announce," no engagement-pod bait, no tagging strangers.
+- The story must be the user's, and true. Run the intake and the story tests above before drafting; a LinkedIn post with a weak story is not ready to write. Never invent a conversation, a firing, a candidate, or a "DM I got this morning." Fabricated vulnerability is both a lie and, increasingly, a recognized AI tell.
+- End by recruiting the comments, because early substantive discussion is what carries a post beyond your network. The prompt needs intellectual content an informed reader can answer with a trade-off, a counterexample, or a benchmark: "Which is harder in your org: decision rights or manager capacity?" Never "Agree?", "Thoughts?", or a call to repost, and never engagement pods; synthetic activity teaches you and the feed nothing.
+- Zero to three hashtags, at the bottom, if any. No "I'm humbled to announce," no tagging strangers.
 - Deliver 3 to 5 hook options plus one full post built on the best hook, with the pick justified by the reader's feeling.
 
 ### Copy that recruits its next reader

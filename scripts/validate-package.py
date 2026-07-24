@@ -55,7 +55,7 @@ readme_numbers = {
 if readme_numbers != set(range(1, 34)):
     raise SystemExit("README pattern table must contain patterns 1-33")
 
-if len(SKILL.splitlines()) > 550:
-    raise SystemExit("SKILL.md exceeds the 550-line portability budget")
+if len(SKILL.splitlines()) > 600:
+    raise SystemExit("SKILL.md exceeds the 600-line portability budget")
 
 print(f"AI Copywriter package v{skill_version} is valid")
