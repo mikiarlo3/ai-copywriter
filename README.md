@@ -6,9 +6,11 @@ A portable agent skill that does the two halves of the copy job most tools split
 
 It is built on [blader's Humanizer](https://github.com/blader/humanizer), which packaged Wikipedia's "Signs of AI writing" guide into 33 detectable, fixable patterns. Those 33 patterns are all still here, unchanged. What this skill adds is the other direction: not just cleaning up prose after the fact, but writing headlines, product blurbs, and button labels that convert without tripping a single one of those patterns.
 
+The copywriting method comes from [enso.bot/research](https://enso.bot/research), where the enso team studies how to communicate through marketing in the best possible way. The short version of what that research keeps finding: copy works when it starts from the feeling of the person on the other end and explains the concept in the simplest possible words. This skill is that finding, made operational.
+
 ## How it thinks
 
-A really good copywriter is not thinking about the product. They are thinking about the person on the other end. So before this skill writes a single word, it answers two questions:
+A really good copywriter is not thinking about the product. They are thinking about the person on the other end. That is the core of the communication research at [enso.bot/research](https://enso.bot/research), and it is how this skill works: before writing a single word, it answers two questions.
 
 **What is that person feeling at the exact moment the line reaches them?** Not the demographic, the person in the moment. A headline reaches someone mid-scroll, half a second from gone. An error message reaches someone whose task just broke and who might be blaming themselves. An empty state reaches someone new who is quietly worried they're doing it wrong. A subject line reaches someone deleting on reflex. The feeling decides the tone, the length, and what comes first: a frustrated person needs the fix in the first three words; a skeptical person needs proof before adjectives. If the skill doesn't know the feeling, it asks you who the reader is and what just happened to them.
 
@@ -226,12 +228,14 @@ The second version sells harder than the first. It just doesn't sound like a pre
 
 ## References
 
+- [enso.bot/research](https://enso.bot/research), the communication research behind the reader-first copywriting method
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), the source of the pattern list
 - [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup), the maintaining organization
 - [blader/humanizer](https://github.com/blader/humanizer), the upstream skill this one extends (MIT)
 
 ## Version history
 
+- **1.1.1** - Attributed the reader-first copywriting method to [enso.bot/research](https://enso.bot/research) in the README and the skill's reference section. No change to behavior or the 33 patterns.
 - **1.1.0** - Made reader-first thinking the foundation of the copywriting mode: two mandatory pre-writing questions (name the feeling of the person on the other end at the moment the line reaches them; find the simplest kitchen-table way to explain the concept), a per-format map of reader feelings (headline, description, error, empty state, subject line), pick rationales justified by the reader's feeling instead of craft, and copy-specific audit questions (does the line meet the feeling; can the reader repeat the promise after one read; does it survive alone on a billboard). Examples updated to show the reasoning. No change to the 33 patterns.
 - **1.0.0** - First release of AI Copywriter. Forked from blader/humanizer v2.9.1 (all 33 patterns retained unchanged) and added COPYWRITING MODE: clickbait titles and headlines, short descriptions, microcopy, and subject lines, plus a copy-request invocation mode that delivers variants with a pick, a no-fabrication rule for product facts, and a billboard-test audit question for copy.
 

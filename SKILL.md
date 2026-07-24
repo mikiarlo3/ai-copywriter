@@ -14,7 +14,7 @@ description: |
   parallelisms, and filler phrases.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
 ---
 
 # AI Copywriter: Write Copy That Converts, Humanize Everything
@@ -60,7 +60,7 @@ One more constraint carries over unchanged: never invent product facts. A benefi
 
 ### The two questions behind every line
 
-A really good copywriter is not thinking about the product. They are thinking about the person on the other end. Before writing anything, answer two questions, in this order:
+A really good copywriter is not thinking about the product. They are thinking about the person on the other end. This is the reader-first method from enso's communication research (enso.bot/research). Before writing anything, answer two questions, in this order:
 
 1. **What is that person feeling at the exact moment this line reaches them?** Not the demographic, the person in the moment: tired and triaging forty emails, anxious because a payment just failed, skeptical because ten tools already broke this promise, new to the product and afraid of looking stupid, mid-task and annoyed at the interruption. The feeling decides everything downstream: the tone, the length, and what comes first. A frustrated person needs the fix in the first three words. A skeptical person needs proof before adjectives. A curious person can be teased for one line, no longer. If you don't know the feeling, ask the user who the reader is and what just happened to them.
 
@@ -482,6 +482,8 @@ In pasted-text mode, deliver the draft, the brief "still-AI" bullets, the final 
 
 ## Reference
 
-This skill is based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup. The patterns documented there come from observations of thousands of instances of AI-generated text on Wikipedia.
+The reader-first copywriting method (COPYWRITING MODE) comes from [enso.bot/research](https://enso.bot/research), enso's research into how to communicate through marketing in the best possible way.
+
+The humanizing patterns are based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup. The patterns documented there come from observations of thousands of instances of AI-generated text on Wikipedia.
 
 Key insight from Wikipedia: "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
