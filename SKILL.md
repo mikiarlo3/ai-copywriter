@@ -1,9 +1,9 @@
 ---
 name: ai-copywriter
-description: "Write copy that converts and doesn't sound like a robot. Two jobs in one skill: a reader-first copywriter for clickbait titles, headlines, short descriptions, microcopy, CTAs, error messages, subject lines, and viral LinkedIn posts, which asks for the ICP, the category, and the story before writing, helps sharpen the story until it is worth telling, names the feeling of the person on the other end, and finds the simplest way to explain the concept; and a humanizer built on Wikipedia's comprehensive Signs of AI writing guide, which detects and fixes inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, passive voice, negative parallelisms, and filler phrases. Use when writing or punching up marketing copy, UI text, titles, or LinkedIn posts, or when editing text to sound natural and human-written."
+description: "Write copy that converts and doesn't sound like a robot. Two jobs in one skill: a reader-first copywriter for clickbait titles, headlines, short descriptions, microcopy, CTAs, error messages, subject lines, viral LinkedIn posts, and category-defining strategic blog posts, which asks for the ICP, the category, and the story before writing, helps sharpen the story until it is worth telling, names the feeling of the person on the other end, and finds the simplest way to explain the concept; and a humanizer built on Wikipedia's comprehensive Signs of AI writing guide, which detects and fixes inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, passive voice, negative parallelisms, and filler phrases. Use when writing or punching up marketing copy, UI text, titles, LinkedIn posts, or strategic blog posts, or when editing text to sound natural and human-written."
 license: MIT
 metadata:
-  version: "1.5.1"
+  version: "1.6.0"
 ---
 
 # AI Copywriter: Write Copy That Converts, Humanize Everything
@@ -147,6 +147,17 @@ A viral LinkedIn post is a true story with a hook, told in the format the feed r
 - End by recruiting the comments, because early substantive discussion is what carries a post beyond your network. The prompt needs intellectual content an informed reader can answer with a trade-off, a counterexample, or a benchmark: "Which is harder in your org: decision rights or manager capacity?" Never "Agree?", "Thoughts?", or a call to repost, and never engagement pods; synthetic activity teaches you and the feed nothing.
 - Zero to three hashtags, at the bottom, if any. No "I'm humbled to announce," no tagging strangers.
 - Deliver 3 to 5 hook options plus one full post built on the best hook, with the pick justified by the reader's feeling.
+
+### Strategic blog posts
+
+A founder-oriented strategic post is long-form copy: a market thesis plus an operating playbook, written by someone who has watched the pattern from inside. When the user asks for a blog post that explains a shift in technology, go-to-market, product behavior, or company building, read `references/strategic-blog-template.md` and follow it end to end. The short version:
+
+- Run the intake first. The ICP is the target reader (which founder, marketer, or investor, exactly), the category is the shelf the post sits on, and the story is the observed pattern: real companies, real mechanics, seen from inside the market. A thesis post with no observed pattern is not ready to write.
+- Open with the broken playbook, not with background. Within the first five paragraphs the reader learns that a strategy they rely on is fading, that some companies are growing anyway, and roughly why. That contradiction carries the rest of the post.
+- Organize the history into two to four named phases, give the new model a two-to-five-word name, state one or two ground rules, then deliver four to seven numbered strategies. Every company example explains a mechanism, not just an outcome, and every strategy ends with an operating lesson.
+- The no-fabrication rule covers evidence: numbers from the user or a named source, cautious language ("this appears to have helped") where causation is uncertain, and no invented quotes or company results.
+- The template's rhythm devices (short paragraphs, occasional fragments, "The old model was X. The new model is Y.") are tools, not quotas; §9, §14, and §31 still govern, and the finished post runs the full draft → audit → final loop like any other copy.
+- Deliver headline variants via the clickbait rules above, a one-sentence subtitle, and the full post per the template's output list.
 
 ### Copy that recruits its next reader
 

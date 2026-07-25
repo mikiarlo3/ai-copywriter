@@ -114,6 +114,34 @@ Write a LinkedIn post from this: [what happened, in your own words,
 with the real numbers and the real moment]
 ```
 
+### Writing a strategic blog post
+
+For founder-facing thesis pieces (the "old playbook is breaking, here is the new one" genre), the skill follows a dedicated template: [references/strategic-blog-template.md](references/strategic-blog-template.md). Ask for a strategic or category-defining blog post and give it whatever raw material you have:
+
+```
+/ai-copywriter
+
+Write a strategic blog post.
+
+Topic: why traditional outbound is dying and what AI-native companies do instead
+Target reader: seed-stage B2B founders doing their own go-to-market
+Old playbook: high-volume cold email sequences
+Emerging shift: growth through community and product-led distribution
+Examples: [companies you have watched do this, and what exactly they did]
+Evidence: [numbers, founder conversations, experiments you can vouch for]
+```
+
+Topic and target reader are enough to start; the skill interviews you for the rest. Here is what happens between your prompt and the finished post:
+
+1. **Intake.** The skill runs its standard interview (ICP, category, story) aimed at this format: who exactly the reader is, what shelf the post sits on, and, most important, the observed pattern. The story test is strict here. If you have not actually watched companies do the new thing, there is no post yet, and the skill keeps digging instead of writing a trend piece from nothing.
+2. **Framework construction.** It organizes the material per the template: an opening built on the broken playbook and the contradiction (some companies are growing anyway), a two-to-four-phase history that makes the thesis feel inevitable, a two-to-five-word name for the new model, one or two ground rules, and four to seven numbered strategies where every company example explains a mechanism and every section ends with an operating lesson.
+3. **Copywriting pass.** The headline goes through the clickbait rules (variants across angles, banned-word list, pick justified by the reader's feeling), and the intro is written for a reader who is skeptical of trend pieces and worried their playbook is decaying.
+4. **Humanizer audit.** The whole post runs the draft, audit, final loop against all 33 patterns before you see it. Strategic essays are where significance inflation, AI vocabulary, and aphorism formulas concentrate, so this pass is not optional and the template says so.
+
+The no-fabrication rule holds throughout: the skill will not invent company results, quotes, community sizes, or market numbers to make the thesis look stronger. Evidence comes from you or from a named source, and uncertain causation gets cautious language.
+
+You get back a headline (with variants and a pick), a one-sentence subtitle, and a 1,500-to-2,500-word post: intro, phases, named model, ground rules, numbered strategies, and a compressed final formula.
+
 ### Humanizing text
 
 Paste text and it comes back with the AI tells removed:
@@ -159,6 +187,8 @@ Each format is the two questions applied to a different moment in the reader's d
 **Subject lines and hooks.** The reader is clearing an inbox, deleting on reflex. So: written to one person, payoff in the first 30 to 40 characters, no fake urgency and no fake familiarity.
 
 **LinkedIn posts.** The reader is scrolling between meetings, hoping for something that feels like work but reads like gossip. So: the first two lines (all that shows before "...see more") open mid-story with the most concrete detail available, one true story or stance per post, one portable claim the reader can repeat in their own words, a recognizable professional audience, and an ending that recruits substantive comments instead of begging "Thoughts?". LinkedIn's short-paragraph rhythm is honored as the format's convention, but the story must be yours and true: the skill asks for the real moment and the real numbers, and it will not invent a firing, a candidate, or a "DM I got this morning." You get 3 to 5 hook options plus one full post built on the best one. The rules follow the sharing research collected in [references/linkedin-virality.md](references/linkedin-virality.md) (Berger and Milkman on high-arousal sharing, LinkedIn's own relevance and dwell-time engineering posts, and cascade research on why virality is noisy), and the skill deliberately avoids algorithm folklore: no golden hour, no link-penalty myths, no engagement pods.
+
+**Strategic blog posts.** The reader is a founder who suspects the playbook they are running is quietly decaying, and who has been burned by enough trend pieces to distrust big claims without mechanisms. So: open with the broken playbook and the contradiction, organize the history into named phases, give the new model a name that can spread, and deliver numbered strategies where every example explains what the company actually did. The full format lives in [references/strategic-blog-template.md](references/strategic-blog-template.md), and the finished post still clears all 33 patterns.
 
 ## The humanizer engine
 
@@ -261,6 +291,7 @@ The second version sells harder than the first. It just doesn't sound like a pre
 
 ## Version history
 
+- **1.6.0** - Added strategic blog posts to the copywriting mode, backed by a full template (references/strategic-blog-template.md): category-defining, founder-oriented posts that open with a broken playbook, explain the market's evolution in named phases, name the emerging model, and deliver four to seven numbered strategies with mechanisms and operating lessons. The template runs on the skill's existing machinery: the intake supplies the reader, category, and observed pattern, the reader-first questions shape the headline and introduction, the no-fabrication rule governs all evidence, and the finished post passes the full 33-pattern humanizer audit. No change to the 33 patterns.
 - **1.5.1** - Portability fix for stricter skill importers (reported against Manus): flattened the frontmatter description from a multi-line YAML block scalar to a single-line quoted string, and replaced the README's paste-based Manus instructions with the native install path (Settings, Skills, + Add, GitHub import or ZIP upload). No change to behavior or the 33 patterns.
 - **1.5.0** - The intake now probes quality, not just presence: after collecting the ICP, category, and story, the skill tests its own understanding (could it surprise a colleague about this ICP, does it know table stakes versus eyebrow-raising claims in the category, can it write the reader's 11pm search query verbatim) and proactively asks follow-up questions the moment its material stops being interesting, instead of writing around a gap it noticed. No change to the 33 patterns.
 - **1.4.0** - Added a mandatory intake before writing: the skill asks for the ICP, the category, and the story in one batch (skipping what the brief already covers), plus a story development loop with four interest tests (surprising number, near-failure moment, overturned belief, dinner-table test) and digging questions to help the author find a true story worth telling before any drafting starts. Embedded mode writes from what exists and names what was missing. Grounded the LinkedIn section in sharing research (shipped as references/linkedin-virality.md): one portable claim per post, high-arousal but professionally credible energy, a recognizable audience, hooks that accurately preview the payoff, comment prompts with intellectual content, and an explicit ban on algorithm folklore and engagement pods. Raised the SKILL.md portability budget to 600 lines. No change to the 33 patterns.
