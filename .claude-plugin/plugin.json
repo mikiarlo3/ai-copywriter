@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "ai-copywriter",
   "description": "Reader-first copywriting that converts without sounding like a robot: clickbait titles, short descriptions, microcopy, subject lines, viral LinkedIn posts, and category-defining strategic blog posts, always starting from the feeling of the person on the other end and the simplest way to explain the concept. Backed by the humanizer's 33 AI-writing patterns from Wikipedia's \"Signs of AI writing\" guide.",
-  "version": "1.6.0",
+  "version": "1.8.0",
   "author": {
     "name": "Mickey Haslavsky",
     "url": "https://github.com/mikiarlo3"

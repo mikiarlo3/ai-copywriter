@@ -256,6 +256,31 @@ Rewrites follow a no-fabrication rule: they never add facts, names, dates, or ci
 | 24 | **Excessive hedging** | "could potentially possibly" | "may" |
 | 25 | **Generic conclusions** | "The future looks bright" | Specific plans or facts |
 
+## Hebrew and right-to-left copy
+
+The 33 patterns were observed in English text. Most describe how a model pads meaning, and that holds in any language. A few describe English orthography, and Hebrew is where applying those does real damage, because two of the characters involved are not punctuation at all.
+
+Gershayim (`״`) sit inside abbreviations like `ד״ר` and `צה״ל`. Geresh (`׳`) marks the consonants Hebrew borrows to spell loanwords, so `ג׳ינס` is jeans and removing the mark changes which sound the reader makes. Both are spelling, and pattern 19 will straighten them into misspellings if it treats them as quotes. The ASCII hyphen in `ב-Dropbox` is how Hebrew attaches a preposition to a word it cannot attach to directly, not the hyphenated word pair pattern 26 is looking for. Pattern 17 has nothing to do, because Hebrew has no letter case.
+
+The larger problem produces no character to notice. Hebrew has no gender-neutral second person, so a button meaning "choose a file" is `בחר` to a man, `בחרי` to a woman, and `בחרו` to a group, with no neutral form underneath any of them. A model asked for Hebrew copy picks the masculine singular, because that is what the corpus does, and it decides who your product talks to without telling you it made a decision. The skill now raises that question during the intake alongside the ICP, and where you have no answer it uses the infinitive (`לבחור קובץ`) for interface labels and the plural for marketing copy, rather than defaulting.
+
+It also writes to avoid bidirectional bugs instead of reporting them afterward. A Hebrew line that ends with a Latin word or a number sends its final period to the far left of the line, because the period has no direction of its own and takes the paragraph's. Ending the sentence in Hebrew costs nothing and the bug never happens.
+
+```
+/ai-copywriter
+
+Write the empty state, error, and button copy for this screen in Hebrew.
+Our brand addresses one reader, informally.
+```
+
+```
+Review this Hebrew landing page: [paste]
+```
+
+The reference file also carries the Hebrew surface of the patterns, which is the part a general instruction to "look for the function" does not reach: `מהווה` where `הוא` belongs is pattern 8 exactly, and it is sharper in Hebrew than in English because Hebrew present tense has no copula verb to avoid. `אשר` at volume where `ש־` belongs, `חשוב לציין כי` as a calque of "it is important to note that", `בעידן ה־` as significance inflation. Plus Israeli locale conventions (day-first dates, a week that starts on Sunday, a working week that ends on Thursday) and a note on what carries over to Arabic and Persian and what does not.
+
+Full detail in [references/hebrew-and-rtl.md](references/hebrew-and-rtl.md).
+
 ## Example: same product, both modes
 
 Say you hand it a note-taking app for lawyers and ask for launch copy.
@@ -285,12 +310,16 @@ The second version sells harder than the first. It just doesn't sound like a pre
 
 - [enso.bot/research](https://enso.bot/research), the communication research behind the reader-first copywriting method
 - [references/linkedin-virality.md](references/linkedin-virality.md), the evidence-based guide behind the LinkedIn rules, with citations to the underlying sharing research
+- [references/hebrew-and-rtl.md](references/hebrew-and-rtl.md), the Hebrew and right-to-left guide: which patterns change, gendered address, bidirectional writing, and the Hebrew surface of the patterns
+- [Unicode Standard Annex #9](https://www.unicode.org/reports/tr9/), the bidirectional algorithm behind the right-to-left rules
+- [Unicode Hebrew code chart](https://www.unicode.org/charts/PDF/U0590.pdf), the codepoints and categories for the maqaf, geresh, and gershayim
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), the source of the pattern list
 - [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup), the maintaining organization
 - [blader/humanizer](https://github.com/blader/humanizer), the upstream skill this one extends (MIT)
 
 ## Version history
 
+- **1.8.0** - Added Hebrew and right-to-left support (shipped as references/hebrew-and-rtl.md). Two failures motivated it, and neither one leaves a character a language gate can detect. Hebrew has no gender-neutral second person, so every button and CTA encodes a gender the model picks by corpus default rather than by decision; the intake now asks how the brand addresses one reader, and the fallback is the infinitive for interface labels and the plural for marketing copy instead of the masculine singular. And gershayim, geresh, and the prefix hyphen are spelling rather than punctuation, so patterns 19 and 26 turn `ד״ר` and `ב-Dropbox` into misspellings when applied by shape, while 17 is a no-op because Hebrew has no letter case and 14 must skip the maqaf. The skill now also writes to avoid bidirectional bugs (never end a line with a Latin token or a number when punctuation follows) rather than reporting them after the fact, and the reference carries the Hebrew surface of the patterns (`מהווה` for pattern 8, `חשוב לציין כי` for pattern 23, `בעידן ה־` for pattern 1), Israeli locale conventions, and the boundary of what transfers to Arabic and Persian. No change to the 33 patterns.
 - **1.6.0** - Added strategic blog posts to the copywriting mode, backed by a full template (references/strategic-blog-template.md): category-defining, founder-oriented posts that open with a broken playbook, explain the market's evolution in named phases, name the emerging model, and deliver four to seven numbered strategies with mechanisms and operating lessons. The template runs on the skill's existing machinery: the intake supplies the reader, category, and observed pattern, the reader-first questions shape the headline and introduction, the no-fabrication rule governs all evidence, and the finished post passes the full 33-pattern humanizer audit. No change to the 33 patterns.
 - **1.5.1** - Portability fix for stricter skill importers (reported against Manus): flattened the frontmatter description from a multi-line YAML block scalar to a single-line quoted string, and replaced the README's paste-based Manus instructions with the native install path (Settings, Skills, + Add, GitHub import or ZIP upload). No change to behavior or the 33 patterns.
 - **1.5.0** - The intake now probes quality, not just presence: after collecting the ICP, category, and story, the skill tests its own understanding (could it surprise a colleague about this ICP, does it know table stakes versus eyebrow-raising claims in the category, can it write the reader's 11pm search query verbatim) and proactively asks follow-up questions the moment its material stops being interesting, instead of writing around a gap it noticed. No change to the 33 patterns.

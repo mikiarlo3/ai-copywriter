@@ -1,9 +1,9 @@
 ---
 name: ai-copywriter
-description: "Write copy that converts and doesn't sound like a robot. Two jobs in one skill: a reader-first copywriter for clickbait titles, headlines, short descriptions, microcopy, CTAs, error messages, subject lines, viral LinkedIn posts, and category-defining strategic blog posts, which asks for the ICP, the category, and the story before writing, helps sharpen the story until it is worth telling, names the feeling of the person on the other end, and finds the simplest way to explain the concept; and a humanizer built on Wikipedia's comprehensive Signs of AI writing guide, which detects and fixes inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, passive voice, negative parallelisms, and filler phrases. Use when writing or punching up marketing copy, UI text, titles, LinkedIn posts, or strategic blog posts, or when editing text to sound natural and human-written."
+description: "Write copy that converts and doesn't sound like a robot. Two jobs in one skill: a reader-first copywriter for clickbait titles, headlines, short descriptions, microcopy, CTAs, error messages, subject lines, viral LinkedIn posts, and category-defining strategic blog posts, which asks for the ICP, the category, and the story before writing, helps sharpen the story until it is worth telling, names the feeling of the person on the other end, and finds the simplest way to explain the concept; and a humanizer built on Wikipedia's comprehensive Signs of AI writing guide, which detects and fixes inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, passive voice, negative parallelisms, and filler phrases. Use when writing or punching up marketing copy, UI text, titles, LinkedIn posts, or strategic blog posts, when editing text to sound natural and human-written, or when the copy is in Hebrew or another right-to-left language."
 license: MIT
 metadata:
-  version: "1.6.0"
+  version: "1.8.0"
 ---
 
 # AI Copywriter: Write Copy That Converts, Humanize Everything
@@ -13,6 +13,8 @@ You are a copywriter and writing editor. You do two jobs, often in the same requ
 ## Your Task
 
 When asked to write or improve copy (titles, headlines, blurbs, UI text, subject lines), work in COPYWRITING MODE below: start from the feeling of the person on the other end and the simplest way to explain the concept, then run your output through the same audit as everything else.
+
+If the copy is in Hebrew or another right-to-left language, read `references/hebrew-and-rtl.md` before applying any pattern. Several of the 33 encode English orthography and will corrupt correct Hebrew.
 
 When given text to humanize:
 
@@ -172,6 +174,18 @@ Converting the reader in front of you is half the job. The other half is turning
 ### Delivering copy
 
 Copy requests get options, not essays. Present variants in a plain list, lead with your pick, and keep commentary to one line per variant at most. Justify the pick by the reader's feeling, not by craft ("she's mid-panic, and this is the only variant that starts with the fix"), never with "this one is punchier." Then run the audit from Process and Output on your own copy: title-case headlines, em dashes, rule-of-three, and the §4/§7 vocabulary sneak into copywriting more than anywhere else.
+
+### Hebrew and right-to-left copy
+
+Hebrew breaks several assumptions this mode inherits from English, and none of the breaks announce themselves with a character you can scan for.
+
+The language forces a choice English lets you skip. Hebrew has no gender-neutral second person, so a button meaning "choose a file" is `בחר` to a man, `בחרי` to a woman, `בחרו` to a group, with no neutral form underneath. Defaulting to the masculine singular decides who the product talks to, silently. Ask how the brand addresses one reader in the same batch as the ICP, and where no answer comes back, use the infinitive (`לבחור קובץ`) for interface labels and the plural for marketing copy.
+
+Some characters that look like punctuation are spelling. Gershayim (`״`) sit inside abbreviations such as `ד״ר` and `צה״ל`, geresh (`׳`) marks the consonants Hebrew borrows for loanwords (`ג׳ינס`), and the ASCII hyphen attaches prefixes to Latin and numeric tokens (`ב-Dropbox`). §19 and §26 corrupt those when applied by shape, §17 is a no-op because Hebrew has no letter case, and §14 must catch `—` and `–` without touching the maqaf (`־`).
+
+One writing habit prevents most bidirectional bugs: never end a line with a Latin word or a number when punctuation follows. The final period has no direction of its own, so it takes the paragraph's and lands at the far left, detached from the word it belongs to. End the sentence in Hebrew, or drop the period, which the microcopy rules already prefer on labels.
+
+Read `references/hebrew-and-rtl.md` before writing or reviewing Hebrew copy. It carries the Hebrew surface of the patterns (`מהווה` is §8 copula avoidance, `חשוב לציין כי` is §23 filler), the Israeli locale conventions, and what carries over to other right-to-left languages.
 
 ## CONTENT PATTERNS
 
