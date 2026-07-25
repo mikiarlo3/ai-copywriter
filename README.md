@@ -226,6 +226,30 @@ Rewrites follow a no-fabrication rule: they never add facts, names, dates, or ci
 | 24 | **Excessive hedging** | "could potentially possibly" | "may" |
 | 25 | **Generic conclusions** | "The future looks bright" | Specific plans or facts |
 
+## Checking copy in other languages
+
+The 33 patterns were observed in English text. Most of them describe how a model pads meaning, and that holds in any language. Four of them describe English orthography, and applying those elsewhere does not clean the copy, it damages it.
+
+Russian marks an omitted present-tense copula with a dash: "Москва — столица России." Pattern 14 says to replace the dash with a period, comma, colon, or parentheses. The comma version is no longer a sentence, and deleting the dash is ungrammatical, because the dash is carrying the verb. German capitalizes nouns, so pattern 17's sentence-case rule is wrong there. Most languages have their own quotation marks, so pattern 19's straight quotes are the foreign ones. Compounding rules in pattern 26 are English morphology.
+
+So the skill now runs a language gate before any pattern is applied: name the source language, detect the target from the text rather than from the language of the request, and if the target is not English, state that language's convention for the mark before touching it. When the mark is grammatically required there, the pattern does not apply, and its presence is not evidence a model wrote the text. That second half matters as much as the first: a writer who had no choice tells you nothing by their punctuation.
+
+There is deliberately no table of languages. The model running this skill already knows the conventions. What it fails to do is remember to ask, so the gate is the mechanism and the model supplies the facts.
+
+The same mode reviews copy instead of rewriting it. Findings come back graded Critical, Major, or Minor across accuracy against the source, fluency judged in the target language on its own terms, terminology consistency, locale conventions (dates, numbers, currency, units, name order), and register. Copy that ships as interface strings gets four more checks: placeholder integrity, grammatical agreement around variables, length against the actual control, and bidirectional ordering.
+
+```
+/ai-copywriter
+
+Check this Hebrew landing page copy against the English source: [paste both]
+```
+
+```
+Review these app strings for LQA issues before we ship: [paste strings]
+```
+
+The severity model and the check dimensions are a reduced form of [MQM](https://themqm.org/), the error typology localization reviews are graded against. Full procedure in [references/lqa.md](references/lqa.md).
+
 ## Example: same product, both modes
 
 Say you hand it a note-taking app for lawyers and ask for launch copy.
@@ -255,12 +279,15 @@ The second version sells harder than the first. It just doesn't sound like a pre
 
 - [enso.bot/research](https://enso.bot/research), the communication research behind the reader-first copywriting method
 - [references/linkedin-virality.md](references/linkedin-virality.md), the evidence-based guide behind the LinkedIn rules, with citations to the underlying sharing research
+- [references/lqa.md](references/lqa.md), the linguistic quality assurance procedure, with the MQM severity model and the interface-string checks
+- [MQM](https://themqm.org/), the error typology and severity model behind the LQA grading
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), the source of the pattern list
 - [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup), the maintaining organization
 - [blader/humanizer](https://github.com/blader/humanizer), the upstream skill this one extends (MIT)
 
 ## Version history
 
+- **1.6.0** - Added LQA MODE, a language gate that runs before any pattern is applied to non-English text. Patterns 14, 17, 19, and 26 encode English orthography rather than machine authorship, and the skill now states the target language's convention before touching the mark, treats a grammatically required mark as neither an error nor a tell, and detects the target language from the text instead of from the language of the request. The same mode reviews rather than rewrites, grading findings Critical, Major, or Minor across accuracy, fluency, terminology, locale conventions, and register, plus placeholder integrity, agreement around variables, length, and bidirectional ordering for interface strings (shipped as references/lqa.md, following MQM). Deliberately no per-language table: the gate is the mechanism and the model supplies the conventions. Added a fifth invocation mode. No change to the 33 patterns.
 - **1.5.1** - Portability fix for stricter skill importers (reported against Manus): flattened the frontmatter description from a multi-line YAML block scalar to a single-line quoted string, and replaced the README's paste-based Manus instructions with the native install path (Settings, Skills, + Add, GitHub import or ZIP upload). No change to behavior or the 33 patterns.
 - **1.5.0** - The intake now probes quality, not just presence: after collecting the ICP, category, and story, the skill tests its own understanding (could it surprise a colleague about this ICP, does it know table stakes versus eyebrow-raising claims in the category, can it write the reader's 11pm search query verbatim) and proactively asks follow-up questions the moment its material stops being interesting, instead of writing around a gap it noticed. No change to the 33 patterns.
 - **1.4.0** - Added a mandatory intake before writing: the skill asks for the ICP, the category, and the story in one batch (skipping what the brief already covers), plus a story development loop with four interest tests (surprising number, near-failure moment, overturned belief, dinner-table test) and digging questions to help the author find a true story worth telling before any drafting starts. Embedded mode writes from what exists and names what was missing. Grounded the LinkedIn section in sharing research (shipped as references/linkedin-virality.md): one portable claim per post, high-arousal but professionally credible energy, a recognizable audience, hooks that accurately preview the payoff, comment prompts with intellectual content, and an explicit ban on algorithm folklore and engagement pods. Raised the SKILL.md portability budget to 600 lines. No change to the 33 patterns.
